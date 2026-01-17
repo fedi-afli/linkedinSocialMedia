@@ -1,0 +1,79 @@
+[{
+  "_id": {
+    "$oid": "695645d81f891c21884b9321"
+  },
+  "title": "Frontend Developer",
+  "company": "TechFlow",
+  "location": "Remote",
+  "type": "Full-time",
+  "postedBy": {
+    "$oid": "695105d49e513ff7eec189ba"
+  },
+  "isActive": true,
+  "applicants": [
+    {
+      "user": {
+        "$oid": "695a4f54df4aadeb1e970bd3"
+      },
+      "status": "pending",
+      "_id": {
+        "$oid": "695a508fdf4aadeb1e970cea"
+      },
+      "appliedAt": {
+        "$date": "2026-01-04T11:35:43.868Z"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2026-01-01T10:00:56.586Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-04T11:35:43.868Z"
+  },
+  "__v": 6,
+  "description": "We are seeking a skilled Frontend Developer to build responsive, high-performance user interfaces for web applications. The role involves translating UI/UX designs into clean, maintainable code, optimizing applications for speed and usability, and collaborating with designers and backend developers to deliver seamless user experiences. Strong knowledge of modern frontend technologies and best practices is required."
+},
+{
+  "_id": {
+    "$oid": "69564804803e20f3c01a4ec4"
+  },
+  "title": "UI/UX Designer",
+  "company": "Creative Minds Studio",
+  "location": "New York, NY",
+  "type": "Contract",
+  "postedBy": {
+    "$oid": "695105d49e513ff7eec189ba"
+  },
+  "isActive": true,
+  "applicants": [],
+  "createdAt": {
+    "$date": "2026-01-01T10:10:12.470Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-04T08:43:51.364Z"
+  },
+  "__v": 5,
+  "description": "We are looking for a creative and detail-oriented UI/UX Designer to design intuitive, engaging, and user-centered digital experiences. The role involves conducting user research, creating wireframes and prototypes, and collaborating closely with developers and product teams to deliver visually appealing and functional interfaces. Strong design skills, usability principles, and a good understanding of user behavior are essential."
+},
+{
+  "_id": {
+    "$oid": "6956556e556eb2e09fc662d8"
+  },
+  "title": "General Supervisor",
+  "company": "Ennaser's Private School",
+  "location": "Ariana",
+  "type": "Full-time",
+  "postedBy": {
+    "$oid": "695105d49e513ff7eec189ba"
+  },
+  "isActive": true,
+  "applicants": [],
+  "createdAt": {
+    "$date": "2026-01-01T11:07:26.227Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-01T12:03:20.089Z"
+  },
+  "__v": 2,
+  "description": "We are seeking a responsible and organized General Supervisor to oversee daily activities and ensure discipline, safety, and compliance with institutional rules. The role involves supervising staff and individuals, monitoring behavior and attendance, addressing incidents, and coordinating with management to maintain a structured and secure environment. Strong leadership, communication, and problem-solving skills are required"
+}]

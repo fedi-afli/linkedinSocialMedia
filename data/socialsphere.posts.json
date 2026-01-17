@@ -1,0 +1,93 @@
+[{
+  "_id": {
+    "$oid": "695101a7e64b083e21abd8f7"
+  },
+  "user": {
+    "$oid": "695101a7e64b083e21abd8e4"
+  },
+  "content": "We are looking for Senior Frontend Engineers! 🚀\nIf you love React, TypeScript, and building scalable UI, send me a DM or apply below.\n\n#hiring #techjobs #remote",
+  "image": "/uploads/post_photo-1498050108023-c5249f4df085.avif",
+  "likes": [],
+  "createdAt": {
+    "$date": "2025-12-22T21:40:08.692Z"
+  },
+  "__v": 0,
+  "updatedAt": {
+    "$date": "2025-12-28T10:08:39.186Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "695101a7e64b083e21abd8fa"
+  },
+  "user": {
+    "$oid": "695101a7e64b083e21abd8ed"
+  },
+  "content": "Tips for better JavaScript: Always use const by default, let when you need reassignment. Avoid var! Also, understand the event loop - it's crucial for async programming. ⚡",
+  "image": "/uploads/post_photo-1498050108023-c5249f4df085.avif",
+  "likes": [],
+  "createdAt": {
+    "$date": "2025-12-22T08:32:36.465Z"
+  },
+  "__v": 0,
+  "updatedAt": {
+    "$date": "2025-12-28T10:08:39.186Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "695101a7e64b083e21abd8fe"
+  },
+  "user": {
+    "$oid": "695101a7e64b083e21abd8ea"
+  },
+  "content": "Design tip: Always test your UI with real data, not dummy content. Real data reveals edge cases and improves your design decisions. 🎨",
+  "image": "/uploads/post_photo-1498050108023-c5249f4df085.avif",
+  "likes": [
+    {
+      "$oid": "695105d49e513ff7eec189ba"
+    },
+    {
+      "$oid": "69565444556eb2e09fc661ae"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-12-28T04:00:19.329Z"
+  },
+  "__v": 5,
+  "updatedAt": {
+    "$date": "2026-01-04T10:40:47.746Z"
+  },
+  "comments": [
+    {
+      "$oid": "69510c7fe20bc717850da793"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "695a4b9d32e41abf40808bd2"
+  },
+  "user": {
+    "$oid": "695105d49e513ff7eec189ba"
+  },
+  "content": "The BackWall for SocialSphere",
+  "image": "/uploads/1767525277085-453024599.png",
+  "likes": [
+    {
+      "$oid": "695a4f54df4aadeb1e970bd3"
+    }
+  ],
+  "comments": [
+    {
+      "$oid": "695a4fecdf4aadeb1e970c1d"
+    }
+  ],
+  "createdAt": {
+    "$date": "2026-01-04T11:14:37.089Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-04T11:33:00.143Z"
+  },
+  "__v": 2
+}]

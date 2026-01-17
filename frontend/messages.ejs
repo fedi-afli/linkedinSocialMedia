@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SocialSphere | Newsfeed</title>
+    <link rel="icon" type="image/png" href="/logo_SS.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { colors: { darkbg: '#0d1117', cardbg: '#161b22', bordercol: '#30363d', accent: '#2f81f7' } } } }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #0d1117; color: #e6edf3; }
+        ::-webkit-scrollbar { width: 8px; } ::-webkit-scrollbar-track { background: #0d1117; } ::-webkit-scrollbar-thumb { background: #30363d; border-radius: 4px; }
+        .nav-item.active { border-bottom: 2px solid #e6edf3; color: #fff; }
+    </style>
+</head>
+<body class="h-screen flex flex-col overflow-hidden bg-[#0d1117] text-[#e6edf3]">
+
+    <nav class="sticky top-0 z-50 bg-cardbg border-b border-bordercol px-4 h-16 flex items-center justify-center">
+        <div class="max-w-7xl w-full flex items-center justify-between">
+            
+            <div class="flex items-center gap-4">
+                <a href="/"><img src="/logo_SS.png" alt="SocialShere Logo" class="h-10 w-auto mr-2"></a>
+            </div>
+
+            <ul class="flex items-center gap-1 sm:gap-6 text-gray-400 text-xs sm:text-sm font-medium">
+                <li class="nav-item  flex flex-col items-center cursor-pointer hover:text-white transition h-16 justify-center px-2">
+                    <a href="/" class="flex flex-col items-center"><svg class="w-6 h-6 mb-0.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg><span class="hidden md:block">Home</span></a>
+                </li>
+                <li class="nav-item flex flex-col items-center cursor-pointer hover:text-white transition h-16 justify-center px-2">
+                    <a href="/jobs" class="flex flex-col items-center"><svg class="w-6 h-6 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg><span class="hidden md:block">Jobs</span></a>
+                </li>
+                <li class="nav-item active flex flex-col items-center cursor-pointer hover:text-white transition h-16 justify-center px-2">
+                    <a href="/messages" class="flex flex-col items-center"><svg class="w-6 h-6 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg><span class="hidden md:block">Messaging</span></a>
+                </li>
+
+                <li class="nav-item flex flex-col items-center cursor-pointer hover:text-white transition h-16 justify-center px-2 relative group">
+                    <img src="<%= user && user.profilePicture ? user.profilePicture : '/uploads/default-avatars/default.png' %>" alt="Me" class="w-6 h-6 rounded-full border border-gray-600 object-cover">
+                    <span class="hidden md:block mt-0.5 text-xs flex items-center"><%= user ? user.username : 'Me' %> <svg class="w-3 h-3 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
+                    
+                    <div class="hidden group-hover:block absolute top-14 right-0 w-48 bg-cardbg border border-bordercol rounded-md shadow-xl py-2 z-50">
+                        <a href="profile" class="block px-4 py-2 hover:bg-gray-800 text-sm">View Profile</a>
+
+                        <div class="border-t border-bordercol my-1"></div>
+                        <a href="logout" id="logout-btn" class="block px-4 py-2 hover:bg-gray-800 text-sm text-red-400">
+                            Sign Out
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+<div id="app" class="flex-1 flex overflow-hidden relative w-full">
+    
+    <div id="chat-list" class="w-full lg:w-96 flex-shrink-0 flex flex-col bg-gray-800 border-r border-gray-700 h-full">
+        <div class="p-4 border-b border-gray-700">
+            <h2 class="text-2xl font-bold mb-4 text-white">Chats</h2>
+            <div class="relative">
+                <input type="text" placeholder="Search Messenger" class="w-full p-2 pl-10 rounded-full bg-gray-700 border-none text-sm text-white focus:ring-2 focus:ring-accent outline-none" />
+                <svg class="w-4 h-4 absolute left-3 top-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            </div>
+        </div>
+
+        <div id="conversation-list" class="flex-grow overflow-y-auto custom-scrollbar">
+            <div class="p-4 text-center text-gray-500">Loading conversations...</div>
+        </div>
+    </div>
+
+    <div id="message-panel" class="hidden lg:flex flex-col flex-1 bg-gray-900 h-full w-full absolute lg:static top-0 left-0 z-10">
+        
+        <div id="chat-header" class="hidden flex-none items-center justify-between p-4 bg-gray-800 border-b border-gray-700 shadow-md">
+            </div>
+
+        <div id="message-container" class="flex-grow p-4 overflow-y-auto space-y-4 flex flex-col scroll-smooth custom-scrollbar">
+            <div id="empty-state" class="m-auto flex flex-col items-center text-gray-500">
+                <svg class="w-16 h-16 mb-4 opacity-20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 4v-4z"></path>
+                </svg>
+                <p class="text-lg font-medium">Select a conversation to start chatting</p>
+            </div>
+        </div>
+
+        <div id="input-area" class="hidden flex-none p-4 bg-gray-800 border-t border-gray-700">
+            <form id="message-form" class="flex items-center space-x-3">
+
+
+                <input 
+                    type="text" 
+                    id="message-input" 
+                    placeholder="Write a message..." 
+                    autocomplete="off"
+                    class="flex-grow p-3 px-5 rounded-full bg-darkbg border border-bordercol text-white focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition placeholder-gray-500" 
+                    required 
+                />
+
+                <button type="submit" class="bg-accent hover:bg-blue-600 text-white p-3 rounded-full transition-all transform hover:scale-105 active:scale-95 shadow-lg flex-shrink-0">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"></path>
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    const conversationList = document.getElementById('conversation-list');
+    const messageContainer = document.getElementById('message-container');
+    const chatHeader = document.getElementById('chat-header');
+    const messageForm = document.getElementById('message-form');
+    const messageInput = document.getElementById('message-input'); 
+    
+    const currentUserId = "<%= user ? user._id : '' %>"; 
+
+    let activeConversationId = null;
+    let activeReceiverId = null; 
+
+    async function loadConversations() {
+        try {
+            const res = await fetch('/messages/conversation');
+            const data = await res.json();
+            
+            if (data.success) {
+                renderConversations(data.conversations);
+            }
+        } catch (err) {
+            console.error("Error loading conversations:", err);
+        }
+    }
+
+    function renderConversations(conversations) {
+        if (!conversations || conversations.length === 0) {
+            conversationList.innerHTML = `<p class="p-4 text-center text-gray-500">No conversations yet</p>`;
+            return;
+        }
+
+        conversationList.innerHTML = conversations.map(conv => {
+            const isUnread = conv.hasUnreadMessages; 
+
+            return `
+                <div id="conv-${conv._id}" 
+                     onclick="openChat('${conv._id}', '${conv.user._id}', '${conv.user.username}', '${conv.user.profilePicture}')" 
+                     class="flex items-center p-3 space-x-3 cursor-pointer hover:bg-gray-700 transition border-l-4 
+                     ${isUnread ? 'border-accent bg-accent/5' : 'border-transparent'} hover:border-accent">
+                    
+                    <div class="relative">
+                        <img class="w-12 h-12 rounded-full object-cover" src="${conv.user.profilePicture || '/uploads/default-avatars/default.png'}">
+                        ${isUnread ? '<span class="unread-dot absolute top-0 right-0 block h-3 w-3 rounded-full bg-accent ring-2 ring-gray-900"></span>' : ''}
+                    </div>
+
+                    <div class="flex-1 min-w-0">
+                        <div class="flex justify-between items-center">
+                            <p class="username-text font-semibold ${isUnread ? 'text-white' : 'text-gray-300'} truncate">
+                                ${conv.user.username}
+                            </p>
+                            ${isUnread ? '<span class="unread-badge text-[10px] font-bold text-accent uppercase tracking-wider ml-2">New</span>' : ''}
+                        </div>
+                        <p class="status-text text-sm ${isUnread ? 'text-white font-bold' : 'text-gray-400'} truncate">
+                            ${isUnread ? 'New messages' : 'Click to message'}
+                        </p>
+                    </div>
+                </div>
+            `;
+        }).join('');
+    }
+
+    async function openChat(convId, receiverId, username, profilePic) {
+        const convElement = document.getElementById(`conv-${convId}`);
+        
+        if (convElement) {
+            convElement.classList.remove('border-accent', 'bg-accent/5');
+            convElement.classList.add('border-transparent');
+
+            const nameText = convElement.querySelector('.username-text'); 
+            if (nameText) {
+                nameText.classList.remove('text-white');
+                nameText.classList.add('text-gray-300');
+            }
+
+            const statusText = convElement.querySelector('.status-text'); 
+            if (statusText) {
+                statusText.classList.remove('text-white', 'font-bold');
+                statusText.classList.add('text-gray-400');
+                statusText.innerText = 'Click to message';
+            }
+
+            const dot = convElement.querySelector('.unread-dot');
+            const badge = convElement.querySelector('.unread-badge');
+            if (dot) dot.remove();
+            if (badge) badge.remove();
+        }
+
+        activeConversationId = convId;
+        activeReceiverId = receiverId; 
+
+        document.getElementById('chat-list').classList.add('hidden', 'lg:flex'); 
+        const messagePanel = document.getElementById('message-panel');
+        messagePanel.classList.remove('hidden');
+        messagePanel.classList.add('flex');
+
+        document.getElementById('chat-header').classList.remove('hidden');
+        document.getElementById('chat-header').classList.add('flex');
+        
+        const inputArea = document.getElementById('input-area');
+        inputArea.classList.remove('hidden');
+        inputArea.classList.add('block');
+        
+        const chatHeader = document.getElementById('chat-header'); 
+        chatHeader.innerHTML = `
+            <div class="flex items-center space-x-3 w-full">
+                <button onclick="closeChat()" class="lg:hidden text-gray-400 hover:text-white mr-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                </button>
+                <div class="relative">
+                    <img class="w-10 h-10 rounded-full object-cover border border-bordercol" src="${profilePic || '/uploads/default-avatars/default.png'}">
+                    <span class="absolute right-0 bottom-0 w-3 h-3 bg-green-500 border-2 border-gray-800 rounded-full"></span>
+                </div>
+                <div>
+                    <p class="font-semibold text-white">${username}</p>
+                    <p class="text-xs text-green-400">Active now</p>
+                </div>
+            </div>
+        `;
+
+        const messageContainer = document.getElementById('message-container'); 
+        messageContainer.innerHTML = '<div class="m-auto text-gray-500 animate-pulse">Loading messages...</div>';
+
+        try {
+            const res = await fetch(`/messages/message/${convId}`);
+            const data = await res.json();
+            
+            if (data.success) {
+                renderMessages(data.messages);
+            }
+        } catch (err) {
+            console.error("Error loading messages:", err);
+            messageContainer.innerHTML = '<p class="m-auto text-red-400">Error loading messages.</p>';
+        }
+    }
+
+    function renderMessages(messages) {
+        messageContainer.innerHTML = messages.map(msg => {
+            const isMe = msg.sender._id === currentUserId || msg.sender === currentUserId;
+            const messageText = msg.text || msg.content; 
+            
+            return `
+                <div class="flex ${isMe ? 'justify-end' : 'justify-start'} mb-2">
+                    <div class="max-w-xs md:max-w-md ${isMe ? 'bg-accent text-white rounded-t-xl rounded-bl-xl' : 'bg-gray-700 text-white rounded-t-xl rounded-br-xl'} p-3 shadow-md">
+                        <p class="text-sm">${messageText}</p>
+                    </div>
+                </div>
+            `;
+        }).join('');
+        
+        messageContainer.scrollTop = messageContainer.scrollHeight;
+    }
+
+    messageForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        if(!messageInput) return;
+        const textVal = messageInput.value.trim();
+        if (!textVal || !activeConversationId) return;
+
+        try {
+            messageInput.value = ''; 
+
+            const payload = {
+                conversationId: activeConversationId,
+                receiver: activeReceiverId, 
+                content: textVal 
+            };
+
+            const response = await fetch('/messages/send', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                credentials: 'include',
+                body: JSON.stringify(payload)
+            });
+
+            const data = await response.json();
+
+            if (data.success || data.message) {
+                const tempMsg = {
+                    sender: currentUserId,
+                    text: textVal,
+                    content: textVal 
+                };
+                appendSingleMessage(data.newMessages || data.message || tempMsg);
+            } else {
+                console.error("Server returned error:", data);
+            }
+        } catch (err) {
+            console.error("Error sending message:", err);
+        }
+    });
+
+    function appendSingleMessage(msg) {
+        const isMe = msg.sender._id === currentUserId || msg.sender === currentUserId;
+        const messageText = msg.text || msg.content; 
+
+        if (messageContainer.querySelector('.animate-pulse') || messageContainer.innerText.includes('Loading')) {
+            messageContainer.innerHTML = '';
+        }
+
+        const messageHtml = `
+            <div class="flex ${isMe ? 'justify-end' : 'justify-start'} mb-2 animate-fade-in">
+                <div class="max-w-xs md:max-w-md ${isMe ? 'bg-accent text-white rounded-t-xl rounded-bl-xl' : 'bg-gray-700 text-white rounded-t-xl rounded-br-xl'} p-3 shadow-md">
+                    <p class="text-sm">${messageText}</p>
+                </div>
+            </div>
+        `;
+        
+        messageContainer.insertAdjacentHTML('beforeend', messageHtml);
+        
+        messageContainer.scrollTo({
+            top: messageContainer.scrollHeight,
+            behavior: 'smooth'
+        });
+    }
+
+    function closeChat() {
+        activeConversationId = null;
+        document.getElementById('message-panel').classList.add('hidden');
+        document.getElementById('message-panel').classList.remove('flex');
+        
+        const chatList = document.getElementById('chat-list');
+        chatList.classList.remove('hidden');
+    }
+
+    loadConversations();
+</script>
+
+    
+</body>
+</html>

@@ -1,0 +1,382 @@
+[{
+  "_id": {
+    "$oid": "695101a7e64b083e21abd8e4"
+  },
+  "username": "sarah_jenkins",
+  "email": "sarah@techgiant.com",
+  "gender": "Female",
+  "password": "$2b$10$Pw2A.bbyoqTx0pUKLMRgkO6IREu6HFypJ/BgWLOIuznTkWCmgDMBC",
+  "isVerified": true,
+  "profilePicture": "https://i.pravatar.cc/150?img=33",
+  "dateOfBirth": {
+    "$date": "1990-05-15T00:00:00.000Z"
+  },
+  "headline": "Recruiter at TechGiant | Hiring Senior Frontend Engineers 🚀",
+  "bio": "Passionate about connecting talented engineers with exciting opportunities. 5+ years of experience in tech recruitment. Let's connect!",
+  "work": "TechGiant Inc.",
+  "experiences": [
+    {
+      "title": "Senior Recruiter",
+      "company": "TechGiant Inc.",
+      "location": "San Francisco, CA",
+      "startDate": {
+        "$date": "2020-01-15T00:00:00.000Z"
+      },
+      "endDate": null,
+      "current": true,
+      "description": "Recruiting senior software engineers and building great teams",
+      "_id": {
+        "$oid": "695101a7e64b083e21abd8e5"
+      }
+    },
+    {
+      "title": "HR Specialist",
+      "company": "StartupXYZ",
+      "location": "Remote",
+      "startDate": {
+        "$date": "2018-06-01T00:00:00.000Z"
+      },
+      "endDate": {
+        "$date": "2019-12-31T00:00:00.000Z"
+      },
+      "current": false,
+      "description": "Handled recruitment and employee relations",
+      "_id": {
+        "$oid": "695101a7e64b083e21abd8e6"
+      }
+    }
+  ],
+  "likedPosts": [],
+  "description": "",
+  "__v": 0,
+  "profileViews": 3,
+  "isAdmin": false,
+  "isBlocked": false
+},
+{
+  "_id": {
+    "$oid": "695101a7e64b083e21abd8e7"
+  },
+  "username": "david_cho",
+  "email": "david@cybersec.com",
+  "gender": "Male",
+  "password": "$2b$10$t/lq.hvtlHYMazudow1yRO7Er2qsIwdTvgKgfTJtN6nRNKU7ho9r6",
+  "isVerified": true,
+  "profilePicture": "https://i.pravatar.cc/150?img=59",
+  "dateOfBirth": {
+    "$date": "1988-08-22T00:00:00.000Z"
+  },
+  "headline": "Cybersecurity Analyst | Securing the Future 🔐",
+  "bio": "Cybersecurity expert with 8+ years of experience. Passionate about secure coding, penetration testing, and protecting digital assets. CISSP certified.",
+  "work": "SecureNet Solutions",
+  "experiences": [
+    {
+      "title": "Senior Cybersecurity Analyst",
+      "company": "SecureNet Solutions",
+      "location": "New York, NY",
+      "startDate": {
+        "$date": "2019-03-01T00:00:00.000Z"
+      },
+      "endDate": null,
+      "current": true,
+      "description": "Leading security initiatives and conducting vulnerability assessments",
+      "_id": {
+        "$oid": "695101a7e64b083e21abd8e8"
+      }
+    },
+    {
+      "title": "Cybersecurity Engineer",
+      "company": "TechDefense Corp",
+      "location": "Boston, MA",
+      "startDate": {
+        "$date": "2016-07-15T00:00:00.000Z"
+      },
+      "endDate": {
+        "$date": "2019-02-28T00:00:00.000Z"
+      },
+      "current": false,
+      "description": "Implemented security protocols and managed incident response",
+      "_id": {
+        "$oid": "695101a7e64b083e21abd8e9"
+      }
+    }
+  ],
+  "likedPosts": [],
+  "description": "",
+  "__v": 0,
+  "profileViews": 58,
+  "isAdmin": false,
+  "isBlocked": true,
+  "location": "Location not set"
+},
+{
+  "_id": {
+    "$oid": "695101a7e64b083e21abd8ea"
+  },
+  "username": "emma_wilson",
+  "email": "emma@designstudio.com",
+  "gender": "Female",
+  "password": "$2b$10$kBjUY0Im.2FWsrTmC6vR8.JBNLg6lmVSAmLz5R4uLvLesHqiw6k9G",
+  "isVerified": true,
+  "profilePicture": "https://i.pravatar.cc/150?img=47",
+  "dateOfBirth": {
+    "$date": "1995-03-10T00:00:00.000Z"
+  },
+  "headline": "UX/UI Designer | Creating Beautiful Digital Experiences ✨",
+  "bio": "Product designer obsessed with user-centered design. Experienced in Figma, prototyping, and user research. Believe great design is invisible.",
+  "work": "DesignStudio Creative",
+  "experiences": [],
+  "likedPosts": [],
+  "description": "",
+  "__v": 0,
+  "isAdmin": false,
+  "isBlocked": true,
+  "location": "Location not set",
+  "profileViews": 21
+},
+{
+  "_id": {
+    "$oid": "695101a7e64b083e21abd8ed"
+  },
+  "username": "alex_patel",
+  "email": "alex@fullstack.dev",
+  "gender": "Male",
+  "password": "$2b$10$bG8DHoTyzJ4achPR7vBpKedYJsyKDepM1anXzC7YWqc7q8uvqs3Xe",
+  "isVerified": true,
+  "profilePicture": "https://i.pravatar.cc/150?img=12",
+  "dateOfBirth": {
+    "$date": "1992-11-30T00:00:00.000Z"
+  },
+  "headline": "Full Stack Developer | JavaScript Enthusiast | Open Source Contributor",
+  "bio": "Full stack developer with 7+ years of experience. Expert in JavaScript, React, Node.js, and MongoDB. Active open source contributor. Always learning!",
+  "work": "TechInnovate Labs",
+  "experiences": [
+    {
+      "title": "Senior Full Stack Developer",
+      "company": "TechInnovate Labs",
+      "location": "Seattle, WA",
+      "startDate": {
+        "$date": "2020-06-01T00:00:00.000Z"
+      },
+      "endDate": null,
+      "current": true,
+      "description": "Building scalable web applications and mentoring junior developers",
+      "_id": {
+        "$oid": "695101a7e64b083e21abd8ee"
+      }
+    },
+    {
+      "title": "Full Stack Developer",
+      "company": "CodeWorks Studio",
+      "location": "Remote",
+      "startDate": {
+        "$date": "2017-08-15T00:00:00.000Z"
+      },
+      "endDate": {
+        "$date": "2020-05-31T00:00:00.000Z"
+      },
+      "current": false,
+      "description": "Developed full stack web applications for various startups",
+      "_id": {
+        "$oid": "695101a7e64b083e21abd8ef"
+      }
+    }
+  ],
+  "likedPosts": [],
+  "description": "",
+  "__v": 0,
+  "isAdmin": false,
+  "isBlocked": false
+},
+{
+  "_id": {
+    "$oid": "695101a7e64b083e21abd8f3"
+  },
+  "username": "michael_torres",
+  "email": "michael@devops.io",
+  "gender": "Male",
+  "password": "$2b$10$MtePbrNxqoopzkSXslQuFOkRWHsi.ikJuE45jWTHXlEMLT4cP6552",
+  "isVerified": true,
+  "profilePicture": "https://i.pravatar.cc/150?img=23",
+  "dateOfBirth": {
+    "$date": "1989-12-05T00:00:00.000Z"
+  },
+  "headline": "DevOps Engineer | Cloud Architect | AWS Certified ☁️",
+  "bio": "DevOps engineer with 9+ years of experience in cloud infrastructure. AWS Solutions Architect certified. Expertise in Kubernetes, Docker, and IaC.",
+  "work": "CloudScale Systems",
+  "experiences": [
+    {
+      "title": "DevOps Lead",
+      "company": "CloudScale Systems",
+      "location": "Denver, CO",
+      "startDate": {
+        "$date": "2019-04-01T00:00:00.000Z"
+      },
+      "endDate": null,
+      "current": true,
+      "description": "Managing cloud infrastructure and leading DevOps team",
+      "_id": {
+        "$oid": "695101a7e64b083e21abd8f4"
+      }
+    },
+    {
+      "title": "Cloud Engineer",
+      "company": "InfrastructurePro",
+      "location": "Remote",
+      "startDate": {
+        "$date": "2016-02-20T00:00:00.000Z"
+      },
+      "endDate": {
+        "$date": "2019-03-31T00:00:00.000Z"
+      },
+      "current": false,
+      "description": "Designed and maintained AWS infrastructure for multiple clients",
+      "_id": {
+        "$oid": "695101a7e64b083e21abd8f5"
+      }
+    }
+  ],
+  "likedPosts": [],
+  "description": "",
+  "__v": 0,
+  "isAdmin": false,
+  "isBlocked": false
+},
+{
+  "_id": {
+    "$oid": "695105d49e513ff7eec189ba"
+  },
+  "username": "fedi afli",
+  "email": "f3diafli@gmail.com",
+  "gender": "male",
+  "password": "$2b$10$KrRHItq3oleEnQrF2WWzaeMeUL3GwR/FyS/8B9YeZyz.8lnvqZxGG",
+  "isVerified": true,
+  "profilePicture": "/uploads/profile-pictures/profile-1767526625540-f8b72135.jpg",
+  "dateOfBirth": {
+    "$date": "2003-05-11T00:00:00.000Z"
+  },
+  "headline": "SocialSphere Admin",
+  "bio": "JavaScript Engineer specializing in building scalable web applications with modern frameworks. Passionate about clean code, performance, and turning ideas into reliable products.",
+  "work": "JavaScript Team Leader",
+  "likedPosts": [],
+  "description": "",
+  "experiences": [
+    {
+      "title": "Senior Admin",
+      "company": "SocialSphere",
+      "location": "Tunisia",
+      "startDate": {
+        "$date": "2025-12-23T00:00:00.000Z"
+      },
+      "endDate": null,
+      "current": true,
+      "description": "",
+      "_id": {
+        "$oid": "695a47f8265dcd792a1d9e75"
+      }
+    },
+    {
+      "title": "Senior Python Engeneer",
+      "company": "Python",
+      "location": "Tunisia",
+      "startDate": {
+        "$date": "2023-06-05T00:00:00.000Z"
+      },
+      "endDate": {
+        "$date": "2025-12-23T00:00:00.000Z"
+      },
+      "current": false,
+      "description": "",
+      "_id": {
+        "$oid": "695a47f8265dcd792a1d9e76"
+      }
+    }
+  ],
+  "__v": 0,
+  "profileViews": 15,
+  "location": "Tunis",
+  "resume": "/uploads/resumes/resume-1767524360584-5efd72a1.pdf",
+  "isAdmin": true,
+  "isBlocked": false
+},
+{
+  "_id": {
+    "$oid": "69565444556eb2e09fc661ae"
+  },
+  "username": "borni afli",
+  "email": "fadi.afli@fsb.ucar.tn",
+  "gender": "male",
+  "password": "$2b$10$JPey8Ml9qHfK4azAIYoqquNPlyfeHthkmy.Rx849h54ogpbYu455S",
+  "isVerified": true,
+  "location": "Tunis",
+  "profilePicture": "/uploads/profile-pictures/profile-1767265348211-0ce6b53d.jpg",
+  "dateOfBirth": {
+    "$date": {
+      "$numberLong": "-24451200000"
+    }
+  },
+  "headline": "Surveillant",
+  "bio": "9ari 3elm nafs wou 3ouloum tarbya",
+  "work": "College Menzah 5",
+  "likedPosts": [],
+  "description": "",
+  "profileViews": 6,
+  "experiences": [
+    {
+      "title": "Surveillant",
+      "company": "College Menzah 5",
+      "location": "Tunis",
+      "startDate": {
+        "$date": "1990-01-01T00:00:00.000Z"
+      },
+      "endDate": null,
+      "current": true,
+      "description": "",
+      "_id": {
+        "$oid": "695654c6556eb2e09fc661ff"
+      }
+    }
+  ],
+  "__v": 0,
+  "isAdmin": false,
+  "isBlocked": false
+},
+{
+  "_id": {
+    "$oid": "695a4f54df4aadeb1e970bd3"
+  },
+  "username": "Arij  Akili",
+  "email": "aflifedi28@gmail.com",
+  "gender": "male",
+  "password": "$2b$10$P36Amuof6H1ErcaiuTvCAOXwqA0UI1In9HXD2h6klygjRBMHfTrdq",
+  "isVerified": true,
+  "isAdmin": false,
+  "isBlocked": false,
+  "location": "Tunis",
+  "profilePicture": "/uploads/profile-pictures/profile-1767526228223-4bbc0f6e.jpg",
+  "dateOfBirth": {
+    "$date": "2003-06-20T00:00:00.000Z"
+  },
+  "headline": "Call Center Agent",
+  "bio": "Customer-focused professional with experience handling inbound and outbound calls, assisting clients with inquiries, resolving issues efficiently, and maintaining a high level of service quality. Skilled in communication, problem-solving, and working under pressure while meeting performance and satisfaction targets.",
+  "work": "Call Center Agent",
+  "resume": null,
+  "profileViews": 0,
+  "experiences": [
+    {
+      "title": "Call Center Agent",
+      "company": "Orange",
+      "location": "Tunisia",
+      "startDate": {
+        "$date": "2024-01-16T00:00:00.000Z"
+      },
+      "endDate": null,
+      "current": true,
+      "description": "",
+      "_id": {
+        "$oid": "695a4fd9df4aadeb1e970bfb"
+      }
+    }
+  ],
+  "__v": 0
+}]
